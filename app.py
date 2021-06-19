@@ -18,7 +18,6 @@ import config
 import string
 import uvicorn
 import pandas as pd
-from sklearn.svm import SVC
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 

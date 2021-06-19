@@ -1,0 +1,11 @@
+2021-06-19 21:39:57,587:INFO:Vectorizer loaded Successfully
+2021-06-19 21:39:57,867:INFO:Model loaded Successfully
+2021-06-19 21:39:57,947:INFO:Started server process [5192]
+2021-06-19 21:39:57,949:INFO:Waiting for application startup.
+2021-06-19 21:39:57,950:INFO:Application startup complete.
+2021-06-19 21:39:57,951:INFO:Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-06-19 21:40:05,136:INFO:Request ID : 1 TEXT : dada INTENT : FindConnection
+2021-06-19 21:41:01,372:INFO:Shutting down
+2021-06-19 21:41:01,475:INFO:Waiting for application shutdown.
+2021-06-19 21:41:01,479:INFO:Application shutdown complete.
+2021-06-19 21:41:01,481:INFO:Finished server process [5192]

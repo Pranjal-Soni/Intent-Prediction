@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:4.4.0
+FROM alpine
 COPY . /usr/app/
 EXPOSE 8000
 WORKDIR /usr/app/
