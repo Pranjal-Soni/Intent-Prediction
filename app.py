@@ -19,6 +19,7 @@ from sklearn.svm import SVC
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
+import time
 
 #punctuations
 punc = string.punctuation
@@ -39,7 +40,8 @@ def home(request: Request):
     """Load Home page of the application"""
     return templates.TemplateResponse("index.html", {"request": request})
 
-
+#
+request_id  = 0
 
 @app.post("/predict_intent")    
 async def predict(text:str):
@@ -50,6 +52,9 @@ async def predict(text:str):
 
     #model prediction
     prediction = svc_classifier.predict(input.values)
+    global request_id
+    request_id += 1
 
-    if prediction[0] == 0: return {"intent":"FindConnection"}
-    else: return {"intent":"DepartureTime"}
+    if prediction[0] == 0: return {"id":request_id,"intent":"FindConnection"}
+    else: return {"id":request_id,"intent":"DepartureTime"}
+
