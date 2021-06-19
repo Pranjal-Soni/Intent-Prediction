@@ -1,0 +1,48 @@
+<title>Intent Prediction</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+<body>
+    <header class="jumbotron ">
+        <h1 class="text-center p-4 text-dark">Text Intent Prediction</h1>
+    </header>
+    <main class="container border border-secondary mb-2">
+        <div class="form-group">
+            <h3 class="form-label" for="userText">Enter Text</h3>
+            <input type="text" class="form-control" id="userText" />
+            <br>
+            <button class="btn btn-success" onclick="predictIntent()">Predict</button>
+        </div>
+    </main>
+    <footer>
+        <div class="text-center p-1 vh-50 bg-dark text-white">Developed By @Pranjal Soni</div>
+    </footer>
+
+</body>
+<script>
+    function predictIntent() {
+        var userText = document.getElementById("userText").value
+        var end_point = "/predict_intent";
+
+        $.ajax({
+            type: 'POST',
+            url: end_point + "?text=" + userText,
+            contentType: "application/json",
+            dataType: 'json',
+            contentType: false,
+            cache: false,
+            processData: false,
+
+            success: function (data) {
+                swal({
+                    title: "intent : " + data.intent,
+                    icon: "success",
+                });
+            }
+        });
+    }
+</script>
