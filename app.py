@@ -16,7 +16,6 @@ import joblib
 import logging
 import config
 import string
-import uvicorn
 import pandas as pd
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
