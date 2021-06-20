@@ -20,7 +20,7 @@ import pandas as pd
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
-import time
+import uvicorn
 
 
 logging.basicConfig(filename=config.LOGS_DIR,level=logging.INFO,
@@ -73,4 +73,4 @@ async def predict(text:str):
     return result
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
